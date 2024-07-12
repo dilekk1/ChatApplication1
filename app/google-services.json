@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "38409650915",
+    "project_id": "chatapp-3276a",
+    "storage_bucket": "chatapp-3276a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:38409650915:android:f77282c0878a1a44f9fbd6",
+        "android_client_info": {
+          "package_name": "com.dilekcelebi.chatapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZetmX5uOB9oNg1Vk4FVnGhC635eGSMVY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
