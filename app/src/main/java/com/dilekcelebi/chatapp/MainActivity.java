@@ -1,6 +1,7 @@
 package com.dilekcelebi.chatapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     private FirebaseAuth auth;
+    private FirebaseUser user;
 
 
     @Override
@@ -31,15 +33,18 @@ public class MainActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
 
+        // son giren kişinin hesabının açık kalmasını sağlıyor.
+
         FirebaseUser user = auth.getCurrentUser();
 
-        if (user!= null){
-            Intent intent = new Intent(this, MessageActivity.class);
+        if (user != null){
+            Intent intent = new Intent(MainActivity.this, ChatActivity.class);
             startActivity(intent);
             finish();
         }
-
     }
+    // 
+
         public void signInClicked (View view){
 
             String email = binding.emailText.getText().toString().trim();

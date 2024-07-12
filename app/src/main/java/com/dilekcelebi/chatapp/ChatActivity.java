@@ -1,6 +1,7 @@
 package com.dilekcelebi.chatapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.dilekcelebi.chatapp.databinding.ActivityChatBinding;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,7 +30,6 @@ public class ChatActivity extends AppCompatActivity {
     private ArrayList<String> userList;
     private DatabaseReference usersRef;
     private FirebaseAuth auth;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,6 +107,7 @@ public class ChatActivity extends AppCompatActivity {
 
             auth.signOut();
 
+
             Intent intent = new Intent(ChatActivity.this, MainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
@@ -115,8 +117,6 @@ public class ChatActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-
 }
 
 
